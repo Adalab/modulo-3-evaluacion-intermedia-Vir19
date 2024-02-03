@@ -1,8 +1,14 @@
-function Form() {
+import PropTypes from "prop-types";
+
+function Form({ handleFilterQuote }) {
+  const handleInput = (event) => {
+    handleFilterQuote(event.currentTarget.value);
+  };
+
   return (
     <form className="form">
       <legend className="legend">Filtrar por frase</legend>
-      <input className="inputFilter" type="text" />
+      <input className="inputFilter" type="text" onInput={handleInput} />
       <legend className="legend">Filtrar por personaje</legend>
       <select className="select" name="Personajes">
         src/scss/App.scss
@@ -18,4 +24,7 @@ function Form() {
   );
 }
 
+Form.PropTypes = {
+  handleFilterQuote: PropTypes.string,
+};
 export default Form;
