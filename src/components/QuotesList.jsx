@@ -1,24 +1,22 @@
 import QuoteItem from "./QuoteItem";
+import PropTypes from "prop-types";
 
-function QuotesList() {
+function QuotesList({ quotes }) {
+  const htmlQuotes = quotes.map((quote, idx) => (
+    <li key={idx} className="phrase">
+      <QuoteItem quote={quote.quote} character={quote.character} />
+    </li>
+  ));
+
   return (
     <>
-      <ul className="phrases_section">
-        <li className="phrase">
-          <QuoteItem />
-        </li>
-        <li className="phrase">
-          <QuoteItem />
-        </li>
-        <li className="phrase">
-          <QuoteItem />
-        </li>
-        <li className="phrase">
-          <QuoteItem />
-        </li>
-      </ul>
+      <ul className="phrases_section">{htmlQuotes}</ul>
     </>
   );
 }
+
+QuotesList.PropTypes = {
+  quotes: PropTypes.array,
+};
 
 export default QuotesList;

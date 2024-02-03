@@ -1,10 +1,17 @@
-function QuoteItem() {
+import PropTypes from "prop-types";
+
+function QuoteItem({ quote, character }) {
   return (
     <>
-      But they dont know that we know they know we know!.-
-      <span className="names">Phoebe</span>
+      {quote}.-
+      <span className="names">{character}</span>
     </>
   );
 }
 
 export default QuoteItem;
+
+QuoteItem.PropTypes = {
+  quote: PropTypes.array,
+  character: PropTypes.array,
+};
