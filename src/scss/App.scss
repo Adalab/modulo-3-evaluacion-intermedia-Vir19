@@ -1,1 +1,49 @@
 @import 'core/reset';
+
+.header {
+  .title{
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0rem 2rem 0rem;
+  }
+}
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  .legend {
+    font-size: 1.3rem;
+  }
+  .inputFilter {
+    margin-right: 3rem;
+    border: 1px solid rgb(54, 177, 54);
+    border-radius: 3px;
+  }
+  .select {
+    border: 1px solid rgb(54, 177, 54);
+    border-radius: 3px;
+    width: 10rem;
+  }
+}
+
+.main {
+  border-top: 1px solid lightgray;
+  margin-top: 5rem;
+  .phrases_section {
+    margin: 3.5rem 2rem 0rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    .phrase {
+     padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+     font-size: 1.3rem;
+     margin-left: 3rem;
+     border: 1px solid lightgray;
+     border-radius: 5px;
+     .names {
+      color: rgb(54, 177, 54);
+      font-weight: 600;
+     }
+    }
+  }
+}
