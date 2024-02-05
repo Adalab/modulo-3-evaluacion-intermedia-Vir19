@@ -4,6 +4,7 @@ import Form from "./Form";
 import QuotesList from "./QuotesList";
 import quotesData from "../data/quoteData.json";
 import { useState } from "react";
+import AddQuote from "./AddQuote";
 
 function App() {
   const [quotes] = useState(quotesData);
@@ -20,9 +21,10 @@ function App() {
   return (
     <div>
       <Header />
-      <Form handleFilterQuote={handleFilterQuote} />
       <main className="main">
+        <Form handleFilterQuote={handleFilterQuote} />
         <QuotesList quotes={quotes} quotes={filteredQuote} />
+        <AddQuote />
       </main>
     </div>
   );
