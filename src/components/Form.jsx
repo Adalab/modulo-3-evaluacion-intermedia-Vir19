@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
-function Form({ handleFilterQuote }) {
+function Form({ handleFilterQuote, setFilterCharacter }) {
   const handleInput = (event) => {
     handleFilterQuote(event.currentTarget.value);
+  };
+
+  const handleCharacterChange = (event) => {
+    setFilterCharacter(event.currentTarget.value);
   };
 
   return (
@@ -10,21 +14,25 @@ function Form({ handleFilterQuote }) {
       <legend className="legend">Filtrar por frase</legend>
       <input className="inputFilter" type="text" onInput={handleInput} />
       <legend className="legend">Filtrar por personaje</legend>
-      <select className="select" name="Personajes">
-        src/scss/App.scss
-        <option value="">Todos</option>
-        <option value="">Joey</option>
-        <option value="">Ross</option>
-        <option value="">Phoebe</option>
-        <option value="">Rachel</option>
-        <option value="">Chandler</option>
-        <option value="">Monica</option>
+      <select
+        className="select"
+        name="Personajes"
+        onChange={handleCharacterChange}
+      >
+        <option value="all">Todos</option>
+        <option value="Joey">Joey</option>
+        <option value="Ross">Ross</option>
+        <option value="Phoebe">Phoebe</option>
+        <option value="Rachel">Rachel</option>
+        <option value="Chandler">Chandler</option>
+        <option value="Monica">Monica</option>
       </select>
     </form>
   );
 }
 
 Form.PropTypes = {
-  handleFilterQuote: PropTypes.string,
+  handleFilterQuote: PropTypes.bool,
+  setFilterCharacter: PropTypes.func,
 };
 export default Form;
